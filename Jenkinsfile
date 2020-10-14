@@ -89,7 +89,7 @@ pipeline {
         stage('Acceptance tests') {
             steps {
                 sh  ''' source activate ${BUILD_TAG}
-                        behave --format=cucumber_json:PrettyCucumberJSONFormatter -o ./reports/acceptance.json || true
+                        behave -f cucumber_json:PrettyCucumberJSONFormatter -o ./reports/acceptance.json || true
                     '''
             }
             post {
