@@ -11,4 +11,4 @@ coverage==5.3
 pytest==6.1.1
 pytest-runner==5.2
 pytest-cov==2.5.1
-behave==2.10.1
+behave==1.2.6
