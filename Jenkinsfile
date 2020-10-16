@@ -135,7 +135,7 @@ pipeline {
             sh 'conda remove --yes -n ${BUILD_TAG} --all'
         }
         success {
-            email (
+            emailext (
                 to: "nabil.fegaiere@gmail.com",
                 subject: "SUCCESSFUL: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
                 body: """<p>SUCCESSFUL: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]':</p>
@@ -143,7 +143,7 @@ pipeline {
                 recipientProviders: [[$class: 'DevelopersRecipientProvider']])
         }
         failure {
-            email (
+            emailext (
                 to: "nabil.fegaiere@gmail.com",
                 subject: "FAILED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
                 body: """<p>FAILED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]':</p>
